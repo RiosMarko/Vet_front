@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Veterinaria Patitas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>🐾 Veterinaria Patitas</h1>
+
+  <div class="menu">
+    <a href="#servicios">Servicios</a>
+    <a href="#citas">Citas</a>
+    <a href="#faq">Preguntas</a>
+  </div>
+
+  <hr>
+
+  <h2>Bienvenido</h2>
+  <p>Somos una veterinaria que atiende perros y gatos. Aquí puedes ver servicios y agendar una cita.</p>
+
+  <hr>
+
+  <h2 id="servicios">Servicios</h2>
+  <p>Busca un servicio:</p>
+  <input id="buscador" type="text" placeholder="Ej: vacunas">
+
+  <ul id="listaServicios">
+    <li>Consulta general</li>
+    <li>Vacunas</li>
+    <li>Desparasitación</li>
+    <li>Cirugías</li>
+    <li>Baño y estética</li>
+    <li>Emergencias</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="citas">Agendar cita</h2>
+  <form id="formCita">
+    <label>Nombre del dueño:</label><br>
+    <input type="text" id="dueno" required><br><br>
+
+    <label>Nombre de la mascota:</label><br>
+    <input type="text" id="mascota" required><br><br>
+
+    <label>Fecha:</label><br>
+    <input type="date" id="fecha" required><br><br>
+
+    <button type="submit">Guardar cita</button>
+  </form>
+
+  <p id="resultado"></p>
+
+  <hr>
+
+  <h2 id="faq">Preguntas frecuentes</h2>
+
+  <p class="pregunta">¿Atienden emergencias?</p>
+  <p class="respuesta">Sí, pero depende del horario. Llama antes si puedes.</p>
+
+  <p class="pregunta">¿Necesito cita?</p>
+  <p class="respuesta">No siempre, pero es mejor agendar para que te atiendan más rápido.</p>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+  font-family: Arial;
+  background: #f2f2f2;
+  padding: 15px;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.menu {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap; /* clave para celular */
+}
+
+.menu a {
+  color: blue;
+  text-decoration: underline;
+  background: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+
+button {
+  padding: 10px 12px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 220px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+ul li {
+  list-style: none;
+  background: white;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.pregunta {
+  font-weight: bold;
+  margin-top: 15px;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.respuesta {
+  margin-top: 5px;
+  margin-left: 0;
+  display: none;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .menu a {
+    flex: 1; 
+    text-align: center;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}
