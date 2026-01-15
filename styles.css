@@ -19,7 +19,7 @@ h2 {
   margin-bottom: 10px;
   display: flex;
   gap: 8px;
-  flex-wrap: wrap; /* clave para celular */
+  flex-wrap: wrap;
 }
 
 .menu a {
