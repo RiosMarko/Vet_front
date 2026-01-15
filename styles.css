@@ -1,75 +1,140 @@
 body {
-  font-family: Arial;
-  background: #f2f2f2;
-  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f4f8;
+  padding: 16px;
   margin: 0;
+  color: #1f2937;
 }
 
 h1 {
-  margin: 0;
+  margin: 0 0 10px 0;
   font-size: 24px;
+  background: #2563eb;
+  color: white;
+  padding: 14px 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #1d4ed8;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 9px 12px;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(17, 24, 39, 0.12);
+  margin: 18px 0;
 }
 
 h2 {
   font-size: 18px;
+  margin: 0 0 8px 0;
 }
 
-.menu {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.menu a {
-  color: blue;
-  text-decoration: underline;
-  background: white;
-  padding: 8px 10px;
-  border-radius: 6px;
+p {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
 }
 
 input {
-  padding: 10px;
+  padding: 10px 12px;
   width: 100%;
-  max-width: 420px;
+  max-width: 520px;
+  border: 1px solid rgba(17, 24, 39, 0.15);
+  border-radius: 10px;
+  outline: none;
+  background: white;
+}
+
+input:focus {
+  border-color: rgba(37, 99, 235, 0.6);
 }
 
 button {
   padding: 10px 12px;
   cursor: pointer;
   width: 100%;
-  max-width: 220px;
+  max-width: 260px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+}
+
+button:hover {
+  background: #1d4ed8;
 }
 
 ul {
   padding-left: 0;
+  margin: 10px 0 0 0;
+  max-width: 520px;
 }
 
 ul li {
   list-style: none;
   background: white;
-  margin-top: 6px;
-  padding: 10px;
-  border-radius: 6px;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+#formCita {
+  background: white;
+  max-width: 520px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+#resultado {
+  margin-top: 10px;
+  background: #e0f2fe;
+  padding: 10px 12px;
+  border-radius: 10px;
+  max-width: 520px;
 }
 
 .pregunta {
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 12px;
   background: white;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  max-width: 520px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
 }
 
 .respuesta {
-  margin-top: 5px;
-  margin-left: 0;
+  margin-top: 8px;
   display: none;
   background: white;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  max-width: 520px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
 }
 
 @media (max-width: 480px) {
@@ -82,8 +147,17 @@ ul li {
   }
 
   .menu a {
-    flex: 1; 
+    flex: 1;
     text-align: center;
+  }
+
+  input,
+  ul,
+  #formCita,
+  #resultado,
+  .pregunta,
+  .respuesta {
+    max-width: 100%;
   }
 
   button {
