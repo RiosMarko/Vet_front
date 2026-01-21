@@ -1,69 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Veterinaria Patitas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
 
-  <h1>🐾 Veterinaria Patitas</h1>
+  <header class="header">
+    <div class="brand">
+      <div class="logo">
+        <img src="Img/Icono_vet.png" alt="Veterinaria Patitas">
+      </div>
 
-  <div class="menu">
-    <a href="#servicios">Servicios</a>
-    <a href="#citas">Citas</a>
-    <a href="#faq">Preguntas</a>
-  </div>
+      <div class="brand-text">
+        <h1>Veterinaria Patitas</h1>
+        <p class="subtitle">Perros y gatos • Atención con cariño</p>
+      </div>
+    </div>
 
-  <hr>
+   <nav class="menu">
+  <a href="#servicios" class="navlink">Servicios</a>
+  <a href="#citas" class="navlink">Citas</a>
+  <a href="#sucursal" class="navlink">Sucursal</a>
+  <a href="#tienda" class="navlink">Tienda</a>
+  <a href="#faq" class="navlink">Preguntas</a>
 
-  <h2>Bienvenido</h2>
-  <p>Somos una veterinaria que atiende perros y gatos. Aquí puedes ver servicios y agendar una cita.</p>
+  <button class="cart-btn" id="btnAbrirCarritoNav" title="Carrito">
+    🛒
+    <span class="cart-badge" id="badgeCarrito">0</span>
+  </button>
+</nav>
+  </header>
 
-  <hr>
+  <main class="container">
 
-  <h2 id="servicios">Servicios</h2>
-  <p>Busca un servicio:</p>
-  <input id="buscador" type="text" placeholder="Ej: vacunas">
+    <section class="card hero">
+      <h2>Bienvenido</h2>
+      <p>
+        Somos una veterinaria que atiende perros y gatos. 
+        Aquí puedes ver servicios, agendar una cita y comprar productos.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#citas">Agendar ahora</a>
+        <a class="btn ghost" href="#tienda">Ir a tienda</a>
+      </div>
+    </section>
 
-  <ul id="listaServicios">
-    <li>Consulta general</li>
-    <li>Vacunas</li>
-    <li>Desparasitación</li>
-    <li>Cirugías</li>
-    <li>Baño y estética</li>
-    <li>Emergencias</li>
-  </ul>
+    <!-- SERVICIOS -->
+    <section class="card" id="servicios">
+      <div class="section-top">
+        <h2>Servicios</h2>
+        <span class="tag" id="contadorServicios">0 servicios</span>
+      </div>
 
-  <hr>
+      <p class="muted">Busca un servicio:</p>
+      <div class="search">
+        <input id="buscador" type="text" placeholder="Ej: vacunas, baño..." autocomplete="off" />
+        <button class="icon-btn" id="btnLimpiar" title="Limpiar">✕</button>
+      </div>
 
-  <h2 id="citas">Agendar cita</h2>
-  <form id="formCita">
-    <label>Nombre del dueño:</label><br>
-    <input type="text" id="dueno" required><br><br>
+      <ul id="listaServicios" class="list">
+        <li>Consulta general</li>
+        <li>Vacunas</li>
+        <li>Desparasitación</li>
+        <li>Cirugías</li>
+        <li>Baño y estética</li>
+        <li>Emergencias</li>
+      </ul>
 
-    <label>Nombre de la mascota:</label><br>
-    <input type="text" id="mascota" required><br><br>
+      <p class="muted" id="estadoServicios"></p>
+    </section>
 
-    <label>Fecha:</label><br>
-    <input type="date" id="fecha" required><br><br>
+    <!-- CITAS -->
+    <section class="card" id="citas">
+      <div class="section-top">
+        <h2>Agendar cita</h2>
+        <span class="tag" id="contadorCitas">0 citas</span>
+      </div>
 
-    <button type="submit">Guardar cita</button>
-  </form>
+      <form id="formCita" class="form">
+        <div class="grid">
+          <div>
+            <label>Nombre del dueño:</label>
+            <input type="text" id="dueno" required />
+          </div>
 
-  <p id="resultado"></p>
+          <div>
+            <label>Nombre de la mascota:</label>
+            <input type="text" id="mascota" required />
+          </div>
 
-  <hr>
+          <div>
+            <label>Fecha:</label>
+            <input type="date" id="fecha" required />
+          </div>
 
-  <h2 id="faq">Preguntas frecuentes</h2>
+          <div>
+            <label>Servicio:</label>
+            <select id="servicio">
+              <option>Consulta general</option>
+              <option>Vacunas</option>
+              <option>Desparasitación</option>
+              <option>Cirugías</option>
+              <option>Baño y estética</option>
+              <option>Emergencias</option>
+            </select>
+          </div>
+        </div>
 
-  <p class="pregunta">¿Atienden emergencias?</p>
-  <p class="respuesta">Sí, pero depende del horario. Llama antes si puedes.</p>
+        <div class="form-actions">
+          <button type="submit" class="btn">Guardar cita</button>
+          <button type="button" class="btn ghost" id="btnBorrarTodo">Borrar todo</button>
+        </div>
 
-  <p class="pregunta">¿Necesito cita?</p>
-  <p class="respuesta">No siempre, pero es mejor agendar para que te atiendan más rápido.</p>
+        <p class="help" id="resultado"></p>
+      </form>
 
-  <script src="script.js"></script>
+      <h3 class="mini-title">Citas guardadas</h3>
+      <div id="listaCitas" class="appointments"></div>
+    </section>
+
+    <!-- SUCURSAL -->
+    <section class="card" id="sucursal">
+      <div class="section-top">
+        <h2>Nuestra sucursal</h2>
+        <span class="tag">Instalaciones</span>
+      </div>
+
+      <p class="muted">Así se ve nuestra clínica.</p>
+
+      <div class="sucursal-img">
+        <img src="Img/Clinica_vet.png" alt="Sucursal Veterinaria Patitas">
+      </div>
+    </section>
+
+    <!-- TIENDA -->
+    <section class="card" id="tienda">
+      <div class="section-top">
+        <h2>Tienda</h2>
+        <span class="tag" id="contadorCarrito">0 en carrito</span>
+      </div>
+
+      <p class="muted">Compra croquetas, medicina y accesorios.</p>
+
+      <div class="shop-top">
+        <input id="buscadorProductos" type="text" placeholder="Buscar producto..." />
+        <button class="btn ghost" id="btnAbrirCarrito">Ver carrito</button>
+      </div>
+
+      <div class="productos" id="productos"></div>
+
+      <p class="help" id="resultadoTienda"></p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <button class="faq-item" data-faq>
+        <span>¿Atienden emergencias?</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="faq-answer">
+        Sí, pero depende del horario. Llama antes si puedes.
+      </div>
+
+      <button class="faq-item" data-faq>
+        <span>¿Necesito cita?</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="faq-answer">
+        No siempre, pero es mejor agendar para que te atiendan más rápido.
+      </div>
+
+      <button class="faq-item" data-faq>
+        <span>¿Qué mascotas atienden?</span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="faq-answer">
+        Principalmente perros y gatos.
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- CARRITO -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart" id="cart">
+    <div class="cart-header">
+      <h3>🛒 Tu carrito</h3>
+      <button class="icon-btn" id="btnCerrarCarrito">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+
+      <div class="cart-actions">
+        <button class="btn ghost" id="btnVaciarCarrito">Vaciar</button>
+        <button class="btn" id="btnComprar">Finalizar</button>
+      </div>
+
+      <p class="muted cart-note">*Compra de demostración.</p>
+    </div>
+  </aside>
+
+<script src="js/main.js"></script>
+<script src="js/servicios.js"></script>
+<script src="js/citas.js"></script>
+<script src="js/faq.js"></script>
+<script src="js/tienda.js"></script>
+
 </body>
 </html>
