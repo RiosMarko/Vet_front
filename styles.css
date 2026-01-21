@@ -8,26 +8,37 @@ body {
 h1 {
   margin: 0;
   font-size: 24px;
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.menu {
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: #3b82f6;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  background: #1d4ed8;
+  padding: 8px 10px;
+  border-radius: 6px;
 }
 
 h2 {
   font-size: 18px;
 }
 
-.menu {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap; /* clave para celular */
-}
-
-.menu a {
-  color: blue;
-  text-decoration: underline;
-  background: white;
-  padding: 8px 10px;
-  border-radius: 6px;
+p {
+  font-size: 14px;
 }
 
 input {
@@ -61,11 +72,11 @@ ul li {
   background: white;
   padding: 10px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .respuesta {
   margin-top: 5px;
-  margin-left: 0;
   display: none;
   background: white;
   padding: 10px;
@@ -79,10 +90,11 @@ ul li {
 
   h1 {
     font-size: 22px;
+    text-align: center;
   }
 
   .menu a {
-    flex: 1; 
+    flex: 1;
     text-align: center;
   }
 
